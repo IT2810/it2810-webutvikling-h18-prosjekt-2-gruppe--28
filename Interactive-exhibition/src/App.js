@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PoemShowcase from './components/PoemShowcase.js';
+import './contentLoader.js';
 import './App.css';
 
 class App extends Component {
