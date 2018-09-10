@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ImageContainer from './ImageContainer.js';
+
+import AppContainer from './ArtContainer.js';
+
 
 
 
@@ -13,13 +15,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <div className="imageContainer">
-          <ImageContainer />
+        <div className="appContainer">
+          <AppContainer />
           </div>
-        <p className="App-intro">
-          To get started2, edit <code>src/App.js</code> and save to reload.
-          <ImageContainer />
-        </p>
       </div>
     );
   }
