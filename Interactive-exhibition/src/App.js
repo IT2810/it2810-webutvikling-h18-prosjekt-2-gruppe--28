@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PoemShowcase from './components/PoemShowcase.js';
 import './App.css';
+import ArtContainer from './ArtContainer.js';
 
 function Category(props){
 
@@ -26,26 +27,21 @@ function Category(props){
 /* class menuItem extends Component{
 
     constructor(props) {
-    
+
         super(props);
-        this.state = 
+        this.state =
     }
 
 
     render()
     return{
-        
+
     }
 } */
 
-import ArtContainer from './ArtContainer.js';
-
-
-
-
 class App extends Component {
 
-  
+
 
   getCategory(){
     return 0;
@@ -58,17 +54,18 @@ class App extends Component {
 
   render() {
     return (
+      <div>
       <div class="grid-container">
         <div class="grid-item" id="item1">
             <h1><u>Interactive exhibition</u></h1>
-        </div>    
+        </div>
         <div class="grid-item" id="title">
             <h2>Please, choose one from each media!</h2>
         </div>
 
         <div class="grid-item" id="item2">
             <Category title="test" c1="hei" c2="hallo" c3="hi" c4="jark"/>
-            
+
             <div class="category" id="cat-1">
                 <h2>Images</h2>
                 <hr></hr>
@@ -100,22 +97,23 @@ class App extends Component {
                     <li class="active">test</li>
                 </ul>
             </div>
-        </div> 
+        </div>
 
         <div class="grid-item" id="item3">
             <div class="tab active" id="tab-1"><h1>1</h1></div>
             <div class="tab" id="tab-2"><h1>2</h1> </div>
             <div class="tab" id="tab-3"><h1>3</h1></div>
             <div class="tab" id="tab-4"><h1>4</h1></div>
-        </div>  
+        </div>
 
         <div class="grid-item" id="item4">
 
             <div class="artContainer">
-                <div class="exhibit" id="art"><img src="logo.svg"></img></div>
+                <div class="exhibit" id="art"><img src="./assets/img/animal/Pig.svg"></img></div>
                 <div class="exhibit" id="text">
-                    <h2>title</h2>
-                    <p>Sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus. Malesuada nunc vel risus commodo viverra. Turpis egestas pretium aenean pharetra magna ac placerat vestibulum. Pellentesque dignissim enim sit amet venenatis urna cursus eget. Imperdiet massa tincidunt nunc pulvinar sapien et. Ultrices vitae auctor eu augue ut lectus arcu. Amet dictum sit amet justo donec. Volutpat diam ut venenatis tellus in metus vulputate eu. Vitae turpis massa sed elementum tempus. Sem et tortor consequat id porta. Semper quis lectus nulla at volutpat diam ut venenatis. Justo donec enim diam vulputate. Fermentum leo vel orci porta non pulvinar neque. Bibendum enim facilisis gravida neque convallis a. Iaculis nunc sed augue lacus viverra vitae. A erat nam at lectus. Pulvinar sapien et ligula ullamcorper malesuada proin libero. Lectus vestibulum mattis ullamcorper velit sed. Praesent tristique magna sit amet</p>
+                <div className="grid-item" id="item5">
+                        <PoemShowcase category = {this.getCategory()} tab = {this.getTab()} />
+                </div>
                 </div>
                 <div class="exhibit" id="sound">
                     <audio controls>
@@ -124,25 +122,12 @@ class App extends Component {
                     </audio>
                 </div>
             </div>
-            
-            
-            
-        </div>  
 
 
-    </div>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <div className="ArtContainer">
-          <ArtContainer />
-          </div>
-          <div className="grid-item" id="item5">
-                  <PoemShowcase category = this.getCategory() tab = this.getTab() />
+
           </div>
       </div>
+    </div>
     );
   }
 }
