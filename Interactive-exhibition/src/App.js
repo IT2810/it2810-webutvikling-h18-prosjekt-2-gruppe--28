@@ -48,6 +48,47 @@ class Category extends Component{
   
 }
 
+class Tab extends Component{
+
+    
+    constructor(props) {
+        super(props);
+        this.state = {
+            alternatives: ["1","2","3","4"],
+            active:0,
+        };
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+
+   handleClick(i,e){
+    this.setState({active:i});
+    this.forceUpdate();
+  }
+
+  isaActive(i){
+      if(this.state.active == i){
+          return "tab active";
+      }
+      return"tab";
+  }
+
+  render() {
+    return(
+        <div class="grid-item" id="item3">
+        <div onClick={(e) => this.handleClick(0,e)} class={this.isaActive(0)} id="tab-1"><h1>{this.state.alternatives[0]}</h1></div>
+        <div onClick={(e) => this.handleClick(1,e)} class={this.isaActive(1)} id="tab-2"><h1>{this.state.alternatives[1]}</h1></div>
+        <div onClick={(e) => this.handleClick(2,e)} class={this.isaActive(2)} id="tab-3"><h1>{this.state.alternatives[2]}</h1></div>
+        <div onClick={(e) => this.handleClick(3,e)} class={this.isaActive(3)} id="tab-4"><h1>{this.state.alternatives[3]}</h1></div>
+        </div>
+    );
+  }
+  
+}
+
+
+
 class menuItem extends Component{
 
     constructor(props) {
@@ -81,12 +122,7 @@ handleClick(){
            <Category title="Sounds" alt1="test" alt2="test" alt3="test"></Category>           
         </div> 
 
-        <div class="grid-item" id="item3">
-            <div class="tab active" id="tab-1"><h1>1</h1></div>
-            <div class="tab" id="tab-2"><h1>2</h1> </div>
-            <div class="tab" id="tab-3"><h1>3</h1></div>
-            <div class="tab" id="tab-4"><h1>4</h1></div>
-        </div>  
+        <Tab></Tab>
 
         <div class="grid-item" id="item4">
 
