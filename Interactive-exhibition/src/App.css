@@ -113,6 +113,10 @@ li:hover, .tab:hover{
   color: white;
 }
 
+.active:hover{
+  background-color: rgb(180, 0, 0)
+}
+
 .exhibit{
 }
 
