@@ -1,6 +1,6 @@
 {
   "poems":{
-    "nature":[{
+    "nature":{
       "poem1":{
         "title": "The bottom of my shoes",
         "content": "The bottoms of my shoes are clean. From walking in the rain.",
@@ -21,7 +21,7 @@
         "content": "Hammering a dent out of a bucket a woodpecker answers from the woods",
         "author": "Kobayashi Issa"
       }
-    }],
+    },
     "love":{
       "poem1":{
         "title": "[goes out comes back]",

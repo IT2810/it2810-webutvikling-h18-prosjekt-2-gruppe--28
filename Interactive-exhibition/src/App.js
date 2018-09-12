@@ -3,6 +3,18 @@ import PoemShowcase from './components/PoemShowcase.js';
 import './App.css';
 
 class App extends Component {
+
+  
+
+  getCategory(){
+    return 0;
+  }
+
+  getTab(){
+    return 0;
+  }
+
+
   render() {
     return (
       <div className="grid-container">
@@ -26,7 +38,7 @@ class App extends Component {
           </div>
 
           <div className="grid-item" id="item5">
-                  <PoemShowcase />
+                  <PoemShowcase category = this.getCategory() tab = this.getTab() />
           </div>
 
       </div>
