@@ -1,68 +1,68 @@
 {
-  "poems": {
-    "nature": {
-      "poem1": {
+  "poems":{
+    "nature":{
+      "poem1":{
         "title": "The bottom of my shoes",
-        "content": "The bottoms of my shoes<br/>are clean<br/>From walking in the rain.",
+        "content": "The bottoms of my shoes are clean. From walking in the rain.",
         "author": "Jack Kerouac"
-      }
-      "poem2": {
+      },
+      "poem2":{
         "title": "Mosquito at my ear",
-        "content": "Mosquito at my ear— <br/>does he think <br/>I’m deaf?",
+        "content": "Mosquito at my ear— does he think I’m deaf?",
         "author": "Kobayashi Issa"
-      }
-      "poem3": {
+      },
+      "poem3":{
         "title": "[Even with insects]",
-        "content": "Even with insects— <br/>some can sing,<br/>some can’t.",
+        "content": "Even with insects— some can sing, some can’t.",
         "author": "Kobayashi Issa"
-      }
-      "poem4": {
+      },
+      "poem4":{
         "title": "A Dent in a Bucket",
-        "content": "Hammering a dent out of a bucket <br/> a woodpecker <br/> answers from the woods",
+        "content": "Hammering a dent out of a bucket a woodpecker answers from the woods",
         "author": "Kobayashi Issa"
       }
-    }
-    "love": {
-      "poem1": {
+    },
+    "love":{
+      "poem1":{
         "title": "[goes out comes back]",
-        "content": "Goes out,<br/>comes back— <br/>the love life of a cat.",
+        "content": "Goes out, comes back— the love life of a cat.",
         "author": "Kobayashi Issa"
-      }
-      "poem2": {
+      },
+      "poem2":{
         "title": "[Under the evening moon]",
-        "content": "Under the evening moon<br/>the snail <br/> is stripped to the waist.",
+        "content": "Under the evening moon the snail is stripped to the waist.",
         "author": "Kobayashi Issa"
-      }
-      "poem3": {
+      },
+      "poem3":{
         "title": "In Kyoto...",
-        "content": "In Kyoto,<br/>hearing the cuckoo,<br/>I long for Kyoto.",
+        "content": "In Kyoto, hearing the cuckoo, I long for Kyoto.",
         "author": "Basho"
-      }
-      "poem4": {
+      },
+      "poem4":{
         "title": "If Not for the Cat",
-        "content": "If not for the cat,<br/>And the scarcity of cheese,<br/>I could be content.",
+        "content": "If not for the cat, And the scarcity of cheese, I could be content.",
         "author": "Jack Prelutsky"
       }
-    }
-    "living": {
-      "poem1": {
+    },
+    "living":{
+      "poem1":{
         "title": "In my medicine cabinet",
-        "content": "In my medicine cabinet <br/>the winter fly <br/>Has died of old age",
+        "content": "In my medicine cabinet the winter fly Has died of old age",
         "author": "Jack Kerouac"
-      }
-      "poem2": {
+      },
+      "poem2":{
         "title": "Useless! Useless!",
-        "content": "Useless! Useless! <br/>—heavy rain driving <br/>into the sea",
+        "content": "Useless! Useless! —heavy rain driving into the sea",
         "author": "Jack Kerouac"
-      }
-      "poem3": {
+      },
+      "poem3":{
         "title": "[the snow is melting]",
-        "content": "The snow is melting <br/> and the village is flooded <br/>with children.",
+        "content": "The snow is melting and the village is flooded with children.",
         "author": "Kobayashi Issa"
-      }
-      "poem4": {
+      },
+      "poem4":{
         "title": "New Year’s morning",
-        "content": "New Year's morning:<br/>the ducks on the pond<br/>quack and quack.",
+        "content": "New Year's morning: the ducks on the pond quack and quack.",
         "author": "Kobayashi Issa"
       }
     }

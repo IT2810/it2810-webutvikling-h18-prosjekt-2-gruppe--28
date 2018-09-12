@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PoemShowcase from './components/PoemShowcase.js';
 import './App.css';
 
 function Category(props){
@@ -43,6 +44,18 @@ import ArtContainer from './ArtContainer.js';
 
 
 class App extends Component {
+
+  
+
+  getCategory(){
+    return 0;
+  }
+
+  getTab(){
+    return 0;
+  }
+
+
   render() {
     return (
       <div class="grid-container">
@@ -116,9 +129,6 @@ class App extends Component {
             
         </div>  
 
-        <div class="grid-item" id="item5">
-           
-        </div>  
 
     </div>
       <div className="App">
@@ -128,6 +138,9 @@ class App extends Component {
         </header>
         <div className="ArtContainer">
           <ArtContainer />
+          </div>
+          <div className="grid-item" id="item5">
+                  <PoemShowcase category = this.getCategory() tab = this.getTab() />
           </div>
       </div>
     );
