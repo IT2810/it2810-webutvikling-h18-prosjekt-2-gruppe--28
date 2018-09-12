@@ -1,43 +1,70 @@
 import React, { Component } from 'react';
 import './App.css';
 
-function Category(props){
+class Category extends Component{
 
-  function handleClick(e){
-    e.preventDefault();
-    console.log("the link was clicked");
+    
+    constructor(props) {
+
+        super(props);
+        this.state = {
+            title: props.title,
+            alternatives: [props.alt1,props.alt2,props.alt3],
+            active:0,
+            
+
+        };
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+
+   handleClick(i,e){
+    this.setState({active:i});
+    this.forceUpdate();
+    console.log(this.state.active);
   }
 
-  return(
-    <div class="category" id="cat-1">
-      <h1>{props.title}</h1>
-      <hr></hr>
-      <ul>
-        <li onClick={handleClick}>{props.c1}</li>
-        <li onClick={handleClick}>{props.c2}</li>
-        <li onClick={handleClick}>{props.c3}</li>
-        <li onClick={handleClick}>{props.c4}</li>
-      </ul>
-    </div>
-  );
+  isaActive(i){
+      if(this.state.active == i){
+          return "active";
+      }
+      return"";
+  }
+
+  render() {
+    return(
+        <div class="category" id="cat-1">
+          <h1>{this.state.title}</h1>
+          <hr></hr>
+          <ul>
+            <li onClick={(e) => this.handleClick(0,e)} class={this.isaActive(0)}>{this.state.alternatives[0]}</li>
+            <li onClick={(e) => this.handleClick(1,e)} class={this.isaActive(1)}>{this.state.alternatives[1]}</li>
+            <li onClick={(e) => this.handleClick(2,e)} class={this.isaActive(2)}>{this.state.alternatives[2]}</li>
+          </ul>
+        </div>
+      );
+  }
+  
 }
 
-/* class menuItem extends Component{
+class menuItem extends Component{
 
     constructor(props) {
     
         super(props);
-        this.state = 
+        this.state = false;
     }
-
-
-    render()
-    return{
-        
-    }
-} */
+}
 
 class App extends Component {
+
+handleClick(){
+    console.log("hei");
+}
+
+
+
   render() {
     return (
       <div class="grid-container">
@@ -49,39 +76,9 @@ class App extends Component {
         </div>
 
         <div class="grid-item" id="item2">
-            <Category title="test" c1="hei" c2="hallo" c3="hi" c4="jark"/>
-            
-            <div class="category" id="cat-1">
-                <h2>Images</h2>
-                <hr></hr>
-                <ul>
-                    <li class="active">test</li>
-                    <li>test</li>
-                    <li>test</li>
-                    <li>test</li>
-                </ul>
-            </div>
-
-            <div class="category" id="cat-2">
-                <h2>Poems</h2>
-                <hr></hr>
-                <ul>
-                    <li>test</li>
-                    <li>test</li>
-                    <li class="active">test</li>
-                    <li>test</li>
-                </ul>
-            </div>
-            <div class="category" id="cat-3">
-                <h2>Music</h2>
-                <hr></hr>
-                <ul>
-                    <li>test</li>
-                    <li>test</li>
-                    <li>test</li>
-                    <li class="active">test</li>
-                </ul>
-            </div>
+           <Category title="Images" alt1="test" alt2="test" alt3="test"></Category>   
+           <Category title="Poems" alt1="test" alt2="test" alt3="test"></Category>   
+           <Category title="Sounds" alt1="test" alt2="test" alt3="test"></Category>           
         </div> 
 
         <div class="grid-item" id="item3">
