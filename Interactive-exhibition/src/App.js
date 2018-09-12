@@ -8,7 +8,7 @@ const poem = "Sed viverra tellus in hac habitasse platea dictumst vestibulum rho
 
 class Category extends Component{
 
-    
+
     constructor(props) {
 
         super(props);
@@ -16,8 +16,7 @@ class Category extends Component{
             title: props.title,
             alternatives: [props.alt1,props.alt2,props.alt3],
             active:0,
-            
-
+            parent: props.parent
         };
 
         this.handleClick = this.handleClick.bind(this);
@@ -26,8 +25,9 @@ class Category extends Component{
 
    handleClick(i,e){
     this.setState({active:i});
-    this.forceUpdate();
-    console.log(this.state.active);
+    if(this.props.title === "Poems"){
+      this.props.parent.updatePoemCategory(i);
+    }
   }
 
   isaActive(i){
@@ -50,17 +50,18 @@ class Category extends Component{
         </div>
       );
   }
-  
+
 }
 
 class Tab extends Component{
 
-    
+
     constructor(props) {
         super(props);
         this.state = {
             alternatives: ["1","2","3","4"],
             active:0,
+            parent:props.parent
         };
 
         this.handleClick = this.handleClick.bind(this);
@@ -69,7 +70,7 @@ class Tab extends Component{
 
    handleClick(i,e){
     this.setState({active:i});
-    this.forceUpdate();
+    this.state.parent.updateTab(i);
   }
 
   isaActive(i){
@@ -89,7 +90,7 @@ class Tab extends Component{
         </div>
     );
   }
-  
+
 }
 
 
@@ -97,22 +98,41 @@ class Tab extends Component{
 class menuItem extends Component{
 
     constructor(props) {
-    
+
         super(props);
-        this.state = false;
     }
 }
 
 class App extends Component {
 
-
-
-  getCategory(){
-    return 0;
+  constructor(props) {
+      super(props);
+      this.state = {
+        image: 0,
+        poemCategory: 0,
+        sound: 0,
+        tab: 0
+      }
+      this.handleClick = this.handleClick.bind(this);
   }
 
-  getTab(){
-    return 0;
+  updateTab(i){
+    this.setState({
+      tab:i
+    })
+  }
+
+  updatePoemCategory(i){
+    this.setState({
+      poemCategory:i
+    })
+  }
+
+
+  handleClick(i,e){
+    this.setState({
+      tab:i
+    })
   }
 
 
@@ -128,19 +148,21 @@ class App extends Component {
         </div>
 
         <div class="grid-item" id="item2">
-           <Category title="Images" alt1="test" alt2="test" alt3="test"></Category>   
-           <Category title="Poems" alt1="test" alt2="test" alt3="test"></Category>   
-           <Category title="Sounds" alt1="test" alt2="test" alt3="test"></Category>           
-        </div> 
+        {this.state.poemCategory}
+           <Category parent = {this} title="Images" alt1="test" alt2="test" alt3="test"></Category>
+           <Category parent = {this} title="Poems" alt1="test" alt2="test" alt3="test"></Category>
+           <Category parent = {this} title="Sounds" alt1="test" alt2="test" alt3="test"></Category>
+        </div>
 
-        <Tab></Tab>
+        <Tab parent={this}></Tab>
 
         <div class="grid-item" id="item4">
-          <ArtContainer imageSource={elephant} poemContent={poem} audioSource={laugh}/>
+          <ArtContainer parent={this} imageSource={elephant} poem poemContent={poem} audioSource={laugh}/>
+          <PoemShowcase category={this.state.poemCategory} tab={this.state.tab} />
         </div>
       </div>
     </div>
-        
+
     );
   }
 }

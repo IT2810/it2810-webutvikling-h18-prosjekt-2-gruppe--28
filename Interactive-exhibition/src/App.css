@@ -7,7 +7,7 @@ body{
 
 ul {
   list-style: none;
-  padding: 0px !important; 
+  padding: 0px !important;
 }
 
 .grid-item, .tab, .category, .exhibit{
@@ -18,7 +18,7 @@ ul {
   margin-top: 100px;
   display: grid;
   grid-template-columns:2.5% 95% 2.5%;
-  grid-template-rows:auto auto auto auto auto auto; 
+  grid-template-rows:auto auto auto auto auto auto;
 }
 
 .artContainer{
@@ -35,7 +35,7 @@ ul {
   grid-column-end:3;
   justify-content: center;
   border-color: lightcoral;
-  
+
 }
 
 
@@ -70,14 +70,14 @@ ul {
 
 #item4{
   grid-row-start: 5;
-  grid-row-end: 6; 
+  grid-row-end: 6;
   display: flex;
   flex-direction: column;
 }
 
 #item5{
   grid-row-start: 6;
-  grid-row-end: 7; 
+  grid-row-end: 7;
 }
 
 
@@ -106,6 +106,7 @@ li{
 
 li:hover, .tab:hover{
   background-color: rgb(235, 235, 235);
+  cursor: pointer;
 }
 
 .active{
@@ -114,7 +115,8 @@ li:hover, .tab:hover{
 }
 
 .active:hover{
-  background-color: rgb(180, 0, 0)
+  background-color: rgb(180, 0, 0);
+  cursor: pointer;
 }
 
 .exhibit{
@@ -130,7 +132,7 @@ li:hover, .tab:hover{
   width: 100%;
 }
 
-#text{
+#poemContainer{
   grid-column-start: 2;
   grid-column-end:3;
   grid-row-start: 1;
@@ -161,7 +163,7 @@ audio{
   .grid-container{
     display: grid;
     grid-template-columns:10% 80% 10%;
-    grid-template-rows:100px auto auto auto auto auto; 
+    grid-template-rows:100px auto auto auto auto auto;
   }
 
   #item2, #item4{

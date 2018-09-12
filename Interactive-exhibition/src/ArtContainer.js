@@ -17,7 +17,7 @@ function PoemContainer(props) {
 }
 
 function AudioContainer(props) {
-  return ( 
+  return (
     <div class="exhibit" id="sound">
       <audio controls>
         <source src={props.audioSource} type="audio/mpeg"></source>
@@ -37,7 +37,7 @@ class ArtContainer extends Component {
         audioSource : props.audioSource,
     };
   }
-    
+
   renderImageContainer(imageSource) {
       return <ImageContainer imageSource={imageSource}>
       </ImageContainer>;
@@ -52,7 +52,7 @@ class ArtContainer extends Component {
     return <AudioContainer audioSource={audioSource}>
     </AudioContainer>;
   }
-  
+
   render() {
     return (
           <div class="artContainer">

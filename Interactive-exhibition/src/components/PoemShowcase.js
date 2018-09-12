@@ -6,32 +6,38 @@ class PoemShowcase extends Component {
       this.state = {
         error: null,
         isLoaded: false,
-        category: props.category,
-        tab: props.tab,
         poem: [],
-        cache: [[null,null,null],[null,null,null],[null,null,null]]
+        cache: [[null,null,null,null],[null,null,null,null],[null,null,null,null]],
       };
     }
 
-    updateContent(){
-      if(this.state.cache[this.state.category][this.state.tab] == null){
+
+    updateContent(props){
+      if(this.state.cache[props.category][props.tab] === null){
         fetch("http://localhost:3001/poems")
           .then(res => res.json())
           .then(
             (result) => {
               var newCache = this.state.cache;
-              var cat = this.state.category;
-              var tab = this.state.tab;
-              newCache[cat][tab] = result.nature.poem1;
+              var categorySting = "";
+              if(props.category === 0){
+                categorySting = "nature";
+              }
+              else if(props.category === 1){
+                categorySting = "love"
+              }
+              else if(props.category === 2){
+                categorySting = "living"
+              }
+              console.log(this.state.cache);
+              newCache[props.category][props.tab] = result[categorySting]["poem"+((props.tab+1).toString())];
+
               this.setState({
                 isLoaded: true,
                 cache: newCache,
-                poem: result.nature.poem1
+                poem: result[categorySting]["poem"+((props.tab+1).toString())]
               });
             },
-            // Note: it's important to handle errors here
-            // instead of a catch() block so that we don't swallow
-            // exceptions from actual bugs in components.
             (error) => {
               this.setState({
                 isLoaded: true,
@@ -40,40 +46,38 @@ class PoemShowcase extends Component {
             }
           )
         }
+        else{
+          this.setState({
+            poem:this.state.cache[props.category][props.tab]
+          })
+        }
     }
-
-    setCategory(newCategory){
-      this.setState({
-        category:newCategory
-      });
-    }
-    setTab(newTab){
-      this.setState({
-        tab:newTab
-      });
-    }
-
     componentDidMount() {
-      this.updateContent();
-  }
+      this.updateContent(this.props);
+    }
+
+    componentDidUpdate(prevProps){
+      if(this.props.tab !== prevProps.tab || this.props.category !== prevProps.category){
+        this.updateContent(this.props);
+      }
+    }
 
   render() {
-    const { error, isLoaded, poem, cache} = this.state;
+    const { error, isLoaded, poem} = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
       return (
-        <div>
-        {console.log(JSON.stringify(cache))}
-          <h1>
+        <div id="poemContainer">
+          <h1 id ="poemTitle">
             {poem.title}
           </h1>
-          <p>
+          <p id="poemAuthor">
             {poem.author}
           </p>
-          <p>
+          <p id="poemContent">
             {poem.content}
           </p>
         </div>
