@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 
-
-
-
-
 function ImageContainer(props) {
   return (
     <img class="exhibit" id="art" src={props.imageSource}/>
@@ -40,33 +36,32 @@ class ArtContainer extends Component {
         poemContent : props.poemContent,
         audioSource : props.audioSource,
     };
-
   }
     
-    renderImageContainer(imageSource) {
-        return <ImageContainer imageSource={imageSource}>
-        </ImageContainer>;
-    }
-
-    renderPoemContainer(poemContent) {
-      return <PoemContainer poemTitle={"Hello"} poemContent={poemContent}>
-      </PoemContainer>;
-    }
-
-    renderAudioContainer(audioSource) {
-      return <AudioContainer audioSource={audioSource}>
-      </AudioContainer>;
-    }
-    
-    render() {
-      return (
-            <div class="artContainer">
-            {this.renderImageContainer(this.state.imageSource)}
-            {this.renderPoemContainer(this.state.poemContent)}
-            {this.renderAudioContainer(this.state.audioSource)}
-            </div>
-      );
-    }
+  renderImageContainer(imageSource) {
+      return <ImageContainer imageSource={imageSource}>
+      </ImageContainer>;
   }
+
+  renderPoemContainer(poemContent) {
+    return <PoemContainer poemTitle={"Hello"} poemContent={poemContent}>
+    </PoemContainer>;
+  }
+
+  renderAudioContainer(audioSource) {
+    return <AudioContainer audioSource={audioSource}>
+    </AudioContainer>;
+  }
+  
+  render() {
+    return (
+          <div class="artContainer">
+          {this.renderImageContainer(this.state.imageSource)}
+          {this.renderPoemContainer(this.state.poemContent)}
+          {this.renderAudioContainer(this.state.audioSource)}
+          </div>
+    );
+  }
+}
 
   export default ArtContainer;
