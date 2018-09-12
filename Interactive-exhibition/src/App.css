@@ -122,6 +122,8 @@ li:hover, .tab:hover{
   grid-row-start: 1;
   grid-row-end:2;
   justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
 #text{
