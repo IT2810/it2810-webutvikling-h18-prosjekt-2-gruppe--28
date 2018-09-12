@@ -1,0 +1,70 @@
+{
+  "poems": {
+    "nature": {
+      "poem1": {
+        "title": "The bottom of my shoes",
+        "content": "The bottoms of my shoesare cleanFrom walking in the rain.",
+        "author": "Jack Kerouac"
+      }
+      "poem2": {
+        "title": "Mosquito at my ear",
+        "content": "Mosquito at my ear— does he think I’m deaf?",
+        "author": "Kobayashi Issa"
+      }
+      "poem3": {
+        "title": "[Even with insects]",
+        "content": "Even with insects— some can sing,some can’t.",
+        "author": "Kobayashi Issa"
+      }
+      "poem4": {
+        "title": "A Dent in a Bucket",
+        "content": "Hammering a dent out of a bucket  a woodpecker  answers from the woods",
+        "author": "Kobayashi Issa"
+      }
+    }
+    "love": {
+      "poem1": {
+        "title": "[goes out comes back]",
+        "content": "Goes out,comes back— the love life of a cat.",
+        "author": "Kobayashi Issa"
+      }
+      "poem2": {
+        "title": "[Under the evening moon]",
+        "content": "Under the evening moonthe snail  is stripped to the waist.",
+        "author": "Kobayashi Issa"
+      }
+      "poem3": {
+        "title": "In Kyoto...",
+        "content": "In Kyoto,hearing the cuckoo,I long for Kyoto.",
+        "author": "Basho"
+      }
+      "poem4": {
+        "title": "If Not for the Cat",
+        "content": "If not for the cat,And the scarcity of cheese,I could be content.",
+        "author": "Jack Prelutsky"
+      }
+    }
+    "living": {
+      "poem1": {
+        "title": "In my medicine cabinet",
+        "content": "In my medicine cabinet the winter fly Has died of old age",
+        "author": "Jack Kerouac"
+      }
+      "poem2": {
+        "title": "Useless! Useless!",
+        "content": "Useless! Useless! —heavy rain driving into the sea",
+        "author": "Jack Kerouac"
+      }
+      "poem3": {
+        "title": "[the snow is melting]",
+        "content": "The snow is melting  and the village is flooded with children.",
+        "author": "Kobayashi Issa"
+      }
+      "poem4": {
+        "title": "New Year’s morning",
+        "content": "New Year's morning:the ducks on the pondquack and quack.",
+        "author": "Kobayashi Issa"
+      }
+    }
+  }
+}
