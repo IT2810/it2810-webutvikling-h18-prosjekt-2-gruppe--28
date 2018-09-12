@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ArtContainer from './ArtContainer.js';
 import './App.css';
 
 function Category(props){
@@ -37,7 +38,6 @@ function Category(props){
     }
 } */
 
-import ArtContainer from './ArtContainer.js';
 
 
 
@@ -97,39 +97,10 @@ class App extends Component {
         </div>  
 
         <div class="grid-item" id="item4">
-
-            <div class="artContainer">
-                <div class="exhibit" id="art"><img src="logo.svg"></img></div>
-                <div class="exhibit" id="text">
-                    <h2>title</h2>
-                    <p>Sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus. Malesuada nunc vel risus commodo viverra. Turpis egestas pretium aenean pharetra magna ac placerat vestibulum. Pellentesque dignissim enim sit amet venenatis urna cursus eget. Imperdiet massa tincidunt nunc pulvinar sapien et. Ultrices vitae auctor eu augue ut lectus arcu. Amet dictum sit amet justo donec. Volutpat diam ut venenatis tellus in metus vulputate eu. Vitae turpis massa sed elementum tempus. Sem et tortor consequat id porta. Semper quis lectus nulla at volutpat diam ut venenatis. Justo donec enim diam vulputate. Fermentum leo vel orci porta non pulvinar neque. Bibendum enim facilisis gravida neque convallis a. Iaculis nunc sed augue lacus viverra vitae. A erat nam at lectus. Pulvinar sapien et ligula ullamcorper malesuada proin libero. Lectus vestibulum mattis ullamcorper velit sed. Praesent tristique magna sit amet</p>
-                </div>
-                <div class="exhibit" id="sound">
-                    <audio controls>
-                        <source src="#" type="audio/mpeg"></source>
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-            </div>
-            
-            
-            
-        </div>  
-
-        <div class="grid-item" id="item5">
-           
-        </div>  
-
-    </div>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <div className="ArtContainer">
-          <ArtContainer />
-          </div>
+          <ArtContainer/>
+        </div>
       </div>
+        
     );
   }
 }
