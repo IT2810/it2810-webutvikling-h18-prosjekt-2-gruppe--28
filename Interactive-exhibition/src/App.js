@@ -37,6 +37,11 @@ function Category(props){
     }
 } */
 
+import ArtContainer from './ArtContainer.js';
+
+
+
+
 class App extends Component {
   render() {
     return (
@@ -116,8 +121,18 @@ class App extends Component {
         </div>  
 
     </div>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <div className="ArtContainer">
+          <ArtContainer />
+          </div>
+      </div>
     );
   }
 }
+
 
 export default App;
