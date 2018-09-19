@@ -141,7 +141,6 @@ class App extends Component {
 
   render() {
     return (
-      <div>
       <div class="grid-container">
         <div class="grid-item" id="item1">
             <h1><u>Interactive exhibition</u></h1>
@@ -158,15 +157,14 @@ class App extends Component {
         <Tab parent={this}></Tab>
 
         <div class="grid-item" id="item4">
-          <SoundShowcase category={this.state.soundCategory} tab={this.state.tab}></SoundShowcase>
+          
           <ArtContainer parent={this} 
             imageShowcase={<ImageShowcase category={this.state.poemCategory} tab={this.state.tab} />}
             poemShowcase={<PoemShowcase category={this.state.poemCategory} tab={this.state.tab} />} 
-        </div>
-            audioSource={laugh}/>
+            soundShowcase={<SoundShowcase category={this.state.soundCategory} tab={this.state.tab} />}
+            />
       </div>
     </div>
-
 );
 }
 }

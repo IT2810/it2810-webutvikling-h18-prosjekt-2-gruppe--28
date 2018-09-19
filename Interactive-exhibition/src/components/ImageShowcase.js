@@ -30,7 +30,14 @@ class ImageShowcase extends Component {
                 categorySting = "ornament"
               }
               console.log(this.state.cache);
-              newCache[props.category][props.tab] = result[categorySting]["image"+((props.tab+1).toString())];
+              console.log(props.category);
+              console.log(props.tab);
+              try{
+                newCache[props.category][props.tab] = result[categorySting]["image"+((props.tab+1).toString())];
+               }catch(error){
+                newCache[0][props.tab] = result[categorySting]["image"+((props.tab+1).toString())];
+               }
+              
 
               this.setState({
                 isLoaded: true,
