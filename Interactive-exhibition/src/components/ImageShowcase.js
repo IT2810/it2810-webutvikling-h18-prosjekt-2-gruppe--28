@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-class PoemShowcase extends Component {
+class ImageShowcase extends Component {
   constructor(props) {
       super(props);
       this.state = {
         error: null,
         isLoaded: false,
-        poem: [],
+        image: [],
         cache: [[null,null,null,null],[null,null,null,null],[null,null,null,null]],
       };
     }
@@ -14,28 +14,28 @@ class PoemShowcase extends Component {
 
     updateContent(props){
       if(this.state.cache[props.category][props.tab] === null){
-        fetch("http://localhost:3002/poems")
+        fetch("http://localhost:3001/images")
           .then(res => res.json())
           .then(
             (result) => {
               var newCache = this.state.cache;
               var categorySting = "";
               if(props.category === 0){
-                categorySting = "nature";
+                categorySting = "animal";
               }
               else if(props.category === 1){
-                categorySting = "love"
+                categorySting = "human"
               }
               else if(props.category === 2){
-                categorySting = "living"
+                categorySting = "ornament"
               }
               console.log(this.state.cache);
-              newCache[props.category][props.tab] = result[categorySting]["poem"+((props.tab+1).toString())];
+              newCache[props.category][props.tab] = result[categorySting]["image"+((props.tab+1).toString())];
 
               this.setState({
                 isLoaded: true,
                 cache: newCache,
-                poem: result[categorySting]["poem"+((props.tab+1).toString())]
+                image: result[categorySting]["image"+((props.tab+1).toString())]
               });
             },
             (error) => {
@@ -48,7 +48,7 @@ class PoemShowcase extends Component {
         }
         else{
           this.setState({
-            poem:this.state.cache[props.category][props.tab]
+            image:this.state.cache[props.category][props.tab]
           })
         }
     }
@@ -63,27 +63,20 @@ class PoemShowcase extends Component {
     }
 
   render() {
-    const { error, isLoaded, poem} = this.state;
+    const { error, isLoaded, image} = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
+        
       return (
-        <div id="poemContainer">
-          <h1 id ="poemTitle">
-            {poem.title}
-          </h1>
-          <p id="poemAuthor">
-            {poem.author}
-          </p>
-          <p id="poemContent">
-            {poem.content}
-          </p>
+          <div className="poemContainer">
+        <div dangerouslySetInnerHTML={{__html: image.svg}} />
         </div>
       );
     }
   }
 }
 
-export default PoemShowcase;
+export default ImageShowcase;
