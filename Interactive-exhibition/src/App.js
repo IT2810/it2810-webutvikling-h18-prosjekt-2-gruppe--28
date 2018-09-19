@@ -28,6 +28,8 @@ class Category extends Component{
     this.setState({active:i});
     if(this.props.title === "Poems"){
       this.props.parent.updatePoemCategory(i);
+    }else if(this.props.title === "Images"){
+        this.props.parent.updateImageCategory(i);
     }else if(this.props.title === "Sounds"){
       this.props.parent.updateSoundCategory(i);
     }
@@ -108,6 +110,7 @@ class App extends Component {
       this.state = {
         image: 0,
         poemCategory: 0,
+        imageCategory: 0,
         sound: 0,
         tab: 0
       }
@@ -123,6 +126,12 @@ class App extends Component {
   updatePoemCategory(i){
     this.setState({
       poemCategory:i
+    })
+  }
+
+  updateImageCategory(i){
+    this.setState({
+      imageCategory:i
     })
   }
 
@@ -150,19 +159,16 @@ class App extends Component {
         </div>
 
         <div class="grid-item" id="item2">
-           <Category parent = {this} title="Images" alt1="Aniaml" alt2="Human" alt3="Ornament"></Category>
+           <Category parent = {this} title="Images" alt1="Animal" alt2="Human" alt3="Ornament"></Category>
            <Category parent = {this} title="Poems" alt1="Love" alt2="Nature" alt3="Living"></Category>
            <Category parent = {this} title="Sounds" alt1="Electronic" alt2="Human" alt3="String Instrument"></Category>
         </div>
         <Tab parent={this}></Tab>
 
         <div class="grid-item" id="item4">
-          
-          <ArtContainer parent={this} 
-            imageShowcase={<ImageShowcase category={this.state.poemCategory} tab={this.state.tab} />}
-            poemShowcase={<PoemShowcase category={this.state.poemCategory} tab={this.state.tab} />} 
-            soundShowcase={<SoundShowcase category={this.state.soundCategory} tab={this.state.tab} />}
-            />
+            <ImageShowcase category={this.state.imageCategory} tab={this.state.tab} />
+            <PoemShowcase category={this.state.poemCategory} tab={this.state.tab} />
+            <SoundShowcase category={this.state.soundCategory} tab={this.state.tab} />
       </div>
     </div>
 );

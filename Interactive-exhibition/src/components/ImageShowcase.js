@@ -14,7 +14,7 @@ class ImageShowcase extends Component {
 
     updateContent(props){
       if(this.state.cache[props.category][props.tab] === null){
-        fetch("http://localhost:3001/images")
+        fetch("http://localhost:3002/images")
           .then(res => res.json())
           .then(
             (result) => {
