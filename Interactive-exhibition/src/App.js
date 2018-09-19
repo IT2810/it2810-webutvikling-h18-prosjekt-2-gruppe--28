@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PoemShowcase from './components/PoemShowcase.js';
+import SoundShowcase from './components/SoundShowcase.js'
 import './App.css';
 import ArtContainer from './ArtContainer.js';
 import elephant from './assets/img/animal/Elephant.svg';
 import laugh from './assets/sound/human/laugh.mp3';
-const poem = "Sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus. Malesuada nunc vel risus commodo viverra. Turpis egestas pretium aenean pharetra magna ac placerat vestibulum. Pellentesque dignissim enim sit amet venenatis urna cursus eget. Imperdiet massa tincidunt nunc pulvinar sapien et. Ultrices vitae auctor eu augue ut lectus arcu. Amet dictum sit amet justo donec. Volutpat diam ut venenatis tellus in metus vulputate eu. Vitae turpis massa sed elementum tempus. Sem et tortor consequat id porta. Semper quis lectus nulla at volutpat diam ut venenatis. Justo donec enim diam vulputate. Fermentum leo vel orci porta non pulvinar neque. Bibendum enim facilisis gravida neque convallis a. Iaculis nunc sed augue lacus viverra vitae. A erat nam at lectus. Pulvinar sapien et ligula ullamcorper malesuada proin libero. Lectus vestibulum mattis ullamcorper velit sed. Praesent tristique magna sit amet";
 
 class Category extends Component{
 
@@ -27,6 +27,8 @@ class Category extends Component{
     this.setState({active:i});
     if(this.props.title === "Poems"){
       this.props.parent.updatePoemCategory(i);
+    }else if(this.props.title === "Sounds"){
+      this.props.parent.updateSoundCategory(i);
     }
   }
 
@@ -54,8 +56,6 @@ class Category extends Component{
 }
 
 class Tab extends Component{
-
-
     constructor(props) {
         super(props);
         this.state = {
@@ -66,7 +66,6 @@ class Tab extends Component{
 
         this.handleClick = this.handleClick.bind(this);
     }
-
 
    handleClick(i,e){
     this.setState({active:i});
@@ -92,8 +91,6 @@ class Tab extends Component{
   }
 
 }
-
-
 
 class menuItem extends Component{
 
@@ -128,6 +125,11 @@ class App extends Component {
     })
   }
 
+  updateSoundCategory(i){
+    this.setState({
+      soundCategory:i
+    })
+  }
 
   handleClick(i,e){
     this.setState({
@@ -148,18 +150,17 @@ class App extends Component {
         </div>
 
         <div class="grid-item" id="item2">
-        {this.state.poemCategory}
-           <Category parent = {this} title="Images" alt1="test" alt2="test" alt3="test"></Category>
-           <Category parent = {this} title="Poems" alt1="test" alt2="test" alt3="test"></Category>
-           <Category parent = {this} title="Sounds" alt1="test" alt2="test" alt3="test"></Category>
+           <Category parent = {this} title="Images" alt1="Aniaml" alt2="Human" alt3="Ornament"></Category>
+           <Category parent = {this} title="Poems" alt1="Love" alt2="Nature" alt3="Living"></Category>
+           <Category parent = {this} title="Sounds" alt1="Electronic" alt2="Human" alt3="String Instrument"></Category>
         </div>
-
         <Tab parent={this}></Tab>
 
         <div class="grid-item" id="item4">
-          <ArtContainer parent={this} imageSource={elephant} poem poemContent={poem} audioSource={laugh}/>
-          <PoemShowcase category={this.state.poemCategory} tab={this.state.tab} />
-        </div>
+{/*           <ArtContainer parent={this} imageSource={elephant} audioSource={laugh}/>
+ */}          <PoemShowcase category={this.state.poemCategory} tab={this.state.tab} />
+          <SoundShowcase category={this.state.soundCategory} tab={this.state.tab}></SoundShowcase>
+       </div>
       </div>
     </div>
 
