@@ -44,7 +44,7 @@ class ArtContainer extends Component {
   }
 
   renderPoemContainer(poemContent) {
-    return <PoemContainer poemTitle={"Hello"} poemContent={poemContent}>
+    return <PoemContainer poemContent={poemContent}>
     </PoemContainer>;
   }
 
