@@ -3,8 +3,9 @@ import PoemShowcase from './components/PoemShowcase.js';
 import SoundShowcase from './components/SoundShowcase.js'
 import './App.css';
 import ArtContainer from './ArtContainer.js';
-import elephant from './assets/img/animal/Elephant.svg';
+//import elephant from './assets/img/animal/Elephant.svg';
 import laugh from './assets/sound/human/laugh.mp3';
+import ImageShowcase from './components/ImageShowcase.js';
 
 class Category extends Component{
 
@@ -157,16 +158,19 @@ class App extends Component {
         <Tab parent={this}></Tab>
 
         <div class="grid-item" id="item4">
-{/*           <ArtContainer parent={this} imageSource={elephant} audioSource={laugh}/>
- */}          <PoemShowcase category={this.state.poemCategory} tab={this.state.tab} />
           <SoundShowcase category={this.state.soundCategory} tab={this.state.tab}></SoundShowcase>
-       </div>
+          <ArtContainer parent={this} 
+            imageShowcase={<ImageShowcase category={this.state.poemCategory} tab={this.state.tab} />}
+            poemShowcase={<PoemShowcase category={this.state.poemCategory} tab={this.state.tab} />} 
+        </div>
+            audioSource={laugh}/>
       </div>
     </div>
 
-    );
-  }
+);
 }
+}
+
 
 
 export default App;

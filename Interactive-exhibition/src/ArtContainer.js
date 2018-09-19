@@ -1,21 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 
-function ImageContainer(props) {
-  return (
-    <img class="exhibit" id="art" src={props.imageSource}/>
-  );
-}
-
-function PoemContainer(props) {
-  return (
-    <div class="exhibit" id="text">
-      <h2>{props.poemTitle}</h2>
-      <p>{props.poemContent}</p>
-    </div>
-  );
-}
-
 function AudioContainer(props) {
   return (
     <div class="exhibit" id="sound">
@@ -32,20 +17,18 @@ class ArtContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        imageSource : props.imageSource,
-        poemContent : props.poemContent,
+        imageShowcase : props.imageShowcase,
+        poemShowcase : props.poemShowcase,
         audioSource : props.audioSource,
     };
   }
 
-  renderImageContainer(imageSource) {
-      return <ImageContainer imageSource={imageSource}>
-      </ImageContainer>;
+  renderImageContainer(imageShowcase) {
+      return imageShowcase;
   }
 
-  renderPoemContainer(poemContent) {
-    return <PoemContainer poemContent={poemContent}>
-    </PoemContainer>;
+  renderPoemContainer(poemShowcase) {
+    return poemShowcase;
   }
 
   renderAudioContainer(audioSource) {
@@ -56,8 +39,8 @@ class ArtContainer extends Component {
   render() {
     return (
           <div class="artContainer">
-          {this.renderImageContainer(this.state.imageSource)}
-          {this.renderPoemContainer(this.state.poemContent)}
+          {this.renderImageContainer(this.state.imageShowcase)}
+          {this.renderPoemContainer(this.state.poemShowcase)}
           {this.renderAudioContainer(this.state.audioSource)}
           </div>
     );
