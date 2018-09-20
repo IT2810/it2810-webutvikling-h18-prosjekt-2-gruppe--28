@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import f from '../../public/assets/img/images'
+
 
 /* 
 * Retrieves category and tab number from app.js, and returns a div containing an svg tag with the correct inner xml using dangerouslySetInnerHTML. 
@@ -19,7 +21,7 @@ class ImageShowcase extends Component {
  */
     updateContent(props){
       if(this.state.cache[props.category][props.tab] === null){
-        fetch("http://folk.ntnu.no/sigbjons/json/images.json")
+        fetch("http://it2810-28.idi.ntnu.no/prosjekt2/assets/img/images.json")
           .then(res => res.json())
           .then(
             (result) => {
