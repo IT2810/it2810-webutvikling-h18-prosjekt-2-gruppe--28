@@ -11,13 +11,15 @@ class ImageShowcase extends Component {
       };
     }
 
-
+  
+    
     updateContent(props){
       if(this.state.cache[props.category][props.tab] === null){
-        fetch("http://localhost:3001/images")
+        fetch("http://localhost:3002/images")
           .then(res => res.json())
           .then(
             (result) => {
+              console.log("result")
               var newCache = this.state.cache;
               var categorySting = "";
               if(props.category === 0){
@@ -30,7 +32,14 @@ class ImageShowcase extends Component {
                 categorySting = "ornament"
               }
               console.log(this.state.cache);
-              newCache[props.category][props.tab] = result[categorySting]["image"+((props.tab+1).toString())];
+              console.log(props.category);
+              console.log(props.tab);
+              try{
+                newCache[props.category][props.tab] = result[categorySting]["image"+((props.tab+1).toString())];
+               }catch(error){
+                newCache[0][props.tab] = result[categorySting]["image"+((props.tab+1).toString())];
+               }
+              
 
               this.setState({
                 isLoaded: true,
@@ -71,7 +80,7 @@ class ImageShowcase extends Component {
     } else {
         
       return (
-          <div className="poemContainer">
+          <div id="imageContainer">
         <div dangerouslySetInnerHTML={{__html: image.svg}} />
         </div>
       );

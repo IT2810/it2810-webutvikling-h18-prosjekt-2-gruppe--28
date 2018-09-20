@@ -14,7 +14,7 @@ class PoemShowcase extends Component {
 
     updateContent(props){
       if(this.state.cache[props.category][props.tab] === null){
-        fetch("http://localhost:3002/poems")
+        fetch("http://localhost:3001/poems")
           .then(res => res.json())
           .then(
             (result) => {
@@ -75,7 +75,7 @@ class PoemShowcase extends Component {
             {poem.title}
           </h1>
           <p id="poemAuthor">
-            {poem.author}
+            <i>{poem.author}</i>
           </p>
           <p id="poemContent">
             {poem.content}
