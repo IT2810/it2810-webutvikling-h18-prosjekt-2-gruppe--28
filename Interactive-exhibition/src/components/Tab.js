@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+/* 
+  Retreivs what tab number is active from App.js, and returns a div containing all the tabs, where one is active. 
+*/
 class Tab extends Component{
     constructor(props) {
         super(props);
@@ -16,6 +19,11 @@ class Tab extends Component{
     this.state.parent.updateTab(i);
   }
 
+
+  /* 
+    Appends the class name active if the tab is active
+  */
+ 
   isaActive(i){
       if(this.state.active == i){
           return "tab active";

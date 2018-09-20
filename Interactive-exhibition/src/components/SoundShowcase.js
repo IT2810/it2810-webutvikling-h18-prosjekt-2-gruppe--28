@@ -15,6 +15,10 @@ var sounds = [[electronic1,electronic2,electronic3,electronic4],[human1,human2,h
 
 
 
+/* 
+  Retreivs category and tab number from app.js, and returns a div containing an audio tag with the correct src. 
+*/
+
 class SoundShowcase extends Component {
   constructor(props) {
       super(props);
