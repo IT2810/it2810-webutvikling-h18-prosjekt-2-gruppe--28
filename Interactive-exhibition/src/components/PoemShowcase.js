@@ -35,12 +35,12 @@ class PoemShowcase extends Component {
                 categorySting = "living"
               }
               console.log(this.state.cache);
-              newCache[props.category][props.tab] = result[categorySting]["poem"+((props.tab+1).toString())];
+              newCache[props.category][props.tab] = result.poems[categorySting]["poem"+((props.tab+1).toString())];
 
               this.setState({
                 isLoaded: true,
                 cache: newCache,
-                poem: result[categorySting]["poem"+((props.tab+1).toString())]
+                poem: result.poems[categorySting]["poem"+((props.tab+1).toString())]
               });
             },
             (error) => {

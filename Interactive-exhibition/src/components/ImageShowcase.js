@@ -21,11 +21,13 @@ class ImageShowcase extends Component {
  */
     updateContent(props){
       if(this.state.cache[props.category][props.tab] === null){
-        fetch("../assets/img/images.json")
+        fetch("../assets/img/images.json",{
+          credentials:"include"
+        })
           .then(res => res.json())
           .then(
             (result) => {
-              console.log("result")
+              console.log(result);
               var newCache = this.state.cache;
               var categorySting = "";
               if(props.category === 0){
@@ -40,8 +42,9 @@ class ImageShowcase extends Component {
               console.log(this.state.cache);
               console.log(props.category);
               console.log(props.tab);
+              console.log(result);
               try{
-                newCache[props.category][props.tab] = result[categorySting]["image"+((props.tab+1).toString())];
+                newCache[props.category][props.tab] = result.images[categorySting]["image"+((props.tab+1).toString())];
                }catch(error){
                 newCache[0][props.tab] = result[categorySting]["image"+((props.tab+1).toString())];
                }
@@ -50,7 +53,7 @@ class ImageShowcase extends Component {
               this.setState({
                 isLoaded: true,
                 cache: newCache,
-                image: result[categorySting]["image"+((props.tab+1).toString())]
+                image: result.images[categorySting]["image"+((props.tab+1).toString())]
               });
             },
             (error) => {
