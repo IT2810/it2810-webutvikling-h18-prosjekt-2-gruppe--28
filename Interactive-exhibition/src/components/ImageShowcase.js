@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import f from '../../public/assets/img/images'
+
 
 
 /* 
@@ -21,7 +21,7 @@ class ImageShowcase extends Component {
  */
     updateContent(props){
       if(this.state.cache[props.category][props.tab] === null){
-        fetch("http://it2810-28.idi.ntnu.no/prosjekt2/assets/img/images.json")
+        fetch("../assets/img/images.json")
           .then(res => res.json())
           .then(
             (result) => {
