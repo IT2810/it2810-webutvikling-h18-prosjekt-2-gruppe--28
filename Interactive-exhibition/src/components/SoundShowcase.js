@@ -14,10 +14,6 @@ import stringInstrument4 from "../assets/sound/stringInstruments/ukulele.mp3";
 var sounds = [[electronic1,electronic2,electronic3,electronic4],[human1,human2,human3,human4],[stringInstrument1,stringInstrument2,stringInstrument3,stringInstrument4]];
 
 
-function itWork(){
-  document.getElementById("audio").pause();
-  console.log("tallafr");
-}
 
 class SoundShowcase extends Component {
   constructor(props) {
@@ -28,7 +24,6 @@ class SoundShowcase extends Component {
     }
 
    updateContent(props){
-       console.log(props.category + ", " + props.tab);
        try{
          this.setState({
            sound: sounds[props.category][props.tab]

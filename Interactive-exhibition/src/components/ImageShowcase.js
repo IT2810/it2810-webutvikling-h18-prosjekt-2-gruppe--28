@@ -11,13 +11,15 @@ class ImageShowcase extends Component {
       };
     }
 
-
+  
+    
     updateContent(props){
       if(this.state.cache[props.category][props.tab] === null){
         fetch("http://localhost:3002/images")
           .then(res => res.json())
           .then(
             (result) => {
+              console.log("result")
               var newCache = this.state.cache;
               var categorySting = "";
               if(props.category === 0){
@@ -78,7 +80,7 @@ class ImageShowcase extends Component {
     } else {
         
       return (
-          <div className="poemContainer">
+          <div id="imageContainer">
         <div dangerouslySetInnerHTML={{__html: image.svg}} />
         </div>
       );

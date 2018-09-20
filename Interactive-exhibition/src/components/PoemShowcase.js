@@ -75,7 +75,7 @@ class PoemShowcase extends Component {
             {poem.title}
           </h1>
           <p id="poemAuthor">
-            {poem.author}
+            <i>{poem.author}</i>
           </p>
           <p id="poemContent">
             {poem.content}
