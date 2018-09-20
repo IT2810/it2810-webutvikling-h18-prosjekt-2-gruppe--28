@@ -21,7 +21,7 @@ class ImageShowcase extends Component {
  */
     updateContent(props){
       if(this.state.cache[props.category][props.tab] === null){
-        fetch("../assets/img/images.json",{
+        fetch("images.json",{
           credentials:"include"
         })
           .then(res => res.json())
