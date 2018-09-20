@@ -12,9 +12,14 @@ class PoemShowcase extends Component {
     }
 
 
+
+
+    /**
+     * Checks if media is cached. If not, fetch with the AJAX Fetch-API and save the string in cache attribute in state.
+     */
     updateContent(props){
       if(this.state.cache[props.category][props.tab] === null){
-        fetch("http://localhost:3001/poems")
+        fetch("http://folk.ntnu.no/sigbjons/json/poems.json")
           .then(res => res.json())
           .then(
             (result) => {

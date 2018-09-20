@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+/* 
+* Retrieves category and tab number from app.js, and returns a div containing an svg tag with the correct inner xml using dangerouslySetInnerHTML. 
+*/
 class ImageShowcase extends Component {
   constructor(props) {
       super(props);
@@ -11,11 +14,12 @@ class ImageShowcase extends Component {
       };
     }
 
-  
-    
+/**
+ * Checks if media is cached. If not, fetch with the AJAX Fetch-API and save the string in cache attribute in state.
+ */
     updateContent(props){
       if(this.state.cache[props.category][props.tab] === null){
-        fetch("http://localhost:3002/images")
+        fetch("http://folk.ntnu.no/sigbjons/json/images.json")
           .then(res => res.json())
           .then(
             (result) => {
@@ -61,6 +65,7 @@ class ImageShowcase extends Component {
           })
         }
     }
+
     componentDidMount() {
       this.updateContent(this.props);
     }

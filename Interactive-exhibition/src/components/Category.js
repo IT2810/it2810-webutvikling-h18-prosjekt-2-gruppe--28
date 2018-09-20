@@ -20,7 +20,7 @@ class Category extends Component{
     }
 
     /*
-    if a category is clicked it will call on the update****category in App.js
+    * if a category is clicked it will call on the update****category in App.js
     */
 
    handleClick(i,e){
@@ -35,7 +35,7 @@ class Category extends Component{
   }
 
     /* 
-        Appends the class name active if the category is active
+    * Appends the class name active if the category is active
     */
     isaActive(i){
         if(this.state.active == i){
@@ -58,5 +58,5 @@ class Category extends Component{
         );
     }
 }
-    
+
 export default Category;

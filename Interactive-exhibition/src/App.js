@@ -21,6 +21,9 @@ class App extends Component {
       this.handleClick = this.handleClick.bind(this);
   }
 
+  /*
+  Updates the states to the diffrent categories/tabs
+  */
   updateTab(i){
     this.setState({
       tab:i

@@ -2,11 +2,12 @@
 
 ## Funksjonalitet på websiden
 ---
+
 Vi har oppfylt kravene til funksjonalitet ved at bruker kan velge fra tre ulike medier, og innad der tre ulike kategorier. Til slutt får brukeren mulighet til å velge en av fire kombinasjon av de ulike mediene og kategoriene. For hver gang brukeren endrer en kategori eller en fane, endrer kombinasjonen seg. Vi brukte utkastet til layout som inspirasjon, men har gjort noe endring, mht plassering av de ulike komponentene. 
----
+
 Lydfilene er hentet fra Bensound og zapsplat.com
 Bildene er hentet fra publicdomainvectors.org
-Diktene kommer fra  poetryfoundation.org
+Diktene kommer fra poetryfoundation.org
 
 ## React
 ---
@@ -21,8 +22,6 @@ I prosjektbeskrivelsen sto det at vi skulle bruke AJAX til å laste inn bilder o
 
 ## Responsive web design
 ---
-
-
 I dette prosjektet var det et krav om at siden skulle være responsiv. Vi prøvde ut designprinsippet med å lage den først for telefon, så utvide den til større skjermer. Dette er noe vi synes å ha suksess med, og merket at det er enklere å legge til enn å fjerne innen webutvikling. For å oppnå et responsivt design valgte vi å bruke CSS-grid for oppbyggingen. Vi lagde en grid bestående av 3 kolonner og 6 rader. Grunnen til at vi valgte CSS-grid var at det fungerer godt i samarbeid med media-queries og det var det vi var mest komfortable med. Vi har som utgangspunkt å sette grid-columns til 2.5% 95% 2.5%. Når skjermen utvider seg endres dette til 10% 80% 10%, noe vi mener er et godt utgangspunkt for «desktop». Ved å bruke % oppnår vi et fleksibelt og flytende layout.
 
 
