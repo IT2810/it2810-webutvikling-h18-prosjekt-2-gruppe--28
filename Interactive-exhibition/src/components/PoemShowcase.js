@@ -19,7 +19,7 @@ class PoemShowcase extends Component {
      */
     updateContent(props){
       if(this.state.cache[props.category][props.tab] === null){
-        fetch("http://it2810-28.idi.ntnu.no/prosjekt2/assets/poems/poems.json")
+        fetch("../assets/poems/poems.json")
           .then(res => res.json())
           .then(
             (result) => {
