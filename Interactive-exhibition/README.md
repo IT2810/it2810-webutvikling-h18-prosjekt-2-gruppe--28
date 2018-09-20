@@ -5,14 +5,14 @@
 
 Vi har oppfylt kravene til funksjonalitet ved at bruker kan velge fra tre ulike medier, og innad der tre ulike kategorier. Til slutt får brukeren mulighet til å velge en av fire kombinasjon av de ulike mediene og kategoriene. For hver gang brukeren endrer en kategori eller en fane, endrer kombinasjonen seg. Vi brukte utkastet til layout som inspirasjon, men har gjort noe endring, mht plassering av de ulike komponentene. 
 
-Lydfilene er hentet fra Bensound og zapsplat.com
-Bildene er hentet fra publicdomainvectors.org
-Diktene kommer fra poetryfoundation.org
+Lydfilene er hentet fra Bensound og zapsplat.com, bildene er hentet fra publicdomainvectors.org og diktene kommer fra poetryfoundation.org
 
 ## React
 ---
 Et av kravene til oppgaven var at nettsiden skulle skrives i React. Alle på gruppen var helt ferske med denne teknologien, så litt tid gikk med på å lære seg dette individuelt før vi begynte på prosjektet. Deretter satte vi i gang med å bygge om og utvide app-malen som ble laget for oss ved `npm create-react-app` 
+
 I god React-ånd har vi benyttet oss av klasser for å lage ulike komponenter med ønsket funksjonalitet. Løsningen vår baserer seg i hovedsak på tre typer komponenter. 3 «Category»-komponenter er på toppen av siden under overskriften. Her er hver «category»-komponent knyttet opp mot hver sin medietype, og en variabel holder styr på hvilken kategori som er valgt. Videre har vi «Tab»-komponenten som representerer de fire tab-valgmulighetene. Også her blir en variabel satt som representerer den nylig klikkede tab-en. Til sist har vi «Showcase»-komponentene. Dette er egentlig 3 relativt like komponenter, som brukes til henholdsvis å hente inn og vise fram medieinnhold basert på «Category»- og «Tab»-verdiene.
+
 Da vi begynte med utviklingen var planen å ha en felles ArtContainer-komponent som inneholdt de tre mediene for å ha et fast oppsett rundt disse og for å kunne stil-legge ut ifra dette. Men mot slutten av utviklingen var Showcase-klassene laget på en slik måte at de returnerte hele komponenter selv, som inneholdt alt det nødvendige, og dermed ble ArtContainer overflødig. Det optimale hadde kanskje vært å separere databehandlingslogikk og framvisning av mediene(selve komponenten) men grunnet litt ulike ideèr og preferanser (og da kanskje litt dårlig kommunikasjon) underveis i utviklingen ble det ikke slik. Men dette er en del av læringsprosessen med nye teknologier og er noe vi er mer observant på til neste gang.
 
 
